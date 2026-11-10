@@ -1,0 +1,91 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  font-family: 'DM Sans', sans-serif;
+  color: #1d2226;
+  background: #f3f2ef;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body { margin: 0; min-width: 320px; min-height: 100vh; }
+button, input, select, textarea { font: inherit; }
+button { cursor: pointer; }
+button:focus-visible, a:focus-visible, input:focus-visible, select:focus-visible, textarea:focus-visible {
+  outline: 3px solid rgba(10, 102, 194, .25);
+  outline-offset: 2px;
+}
+::selection { background: #d7eaff; color: #12345a; }
+
+.profile-cover {
+  background-image:
+    linear-gradient(90deg, rgba(10, 35, 58, .25), rgba(10, 35, 58, .04)),
+    url('https://images.unsplash.com/photo-1521737711867-e3b97375f902?auto=format&fit=crop&w=1600&q=85');
+  background-position: center 48%;
+  background-size: cover;
+}
+
+.nav-item {
+  display: flex;
+  height: 100%;
+  min-width: 42px;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+  border-bottom: 2px solid transparent;
+  padding: 0 5px;
+  color: #64748b;
+  font-size: 10px;
+  transition: color .18s ease, border-color .18s ease;
+}
+.nav-item:hover { color: #1d2226; }
+.nav-item-active { border-color: #1d2226; color: #1d2226; }
+
+.profile-section {
+  border: 1px solid #e2e8f0;
+  border-radius: 12px;
+  background: #fff;
+  padding: 22px 28px;
+  box-shadow: 0 1px 2px rgba(15, 23, 42, .04);
+}
+.profile-section h2 {
+  color: #172b4d;
+  font-family: 'Manrope', sans-serif;
+  font-size: 21px;
+  font-weight: 800;
+}
+.profile-section > p:not(.section-subtitle) {
+  margin-top: 12px;
+  color: #475569;
+  font-size: 14px;
+  line-height: 1.8;
+}
+.section-subtitle { margin-top: 4px; color: #64748b; font-size: 13px; }
+.skill-chip {
+  display: inline-flex;
+  align-items: center;
+  border: 1px solid #cbd5e1;
+  border-radius: 999px;
+  padding: 7px 13px;
+  color: #334155;
+  font-size: 13px;
+  font-weight: 600;
+  transition: border-color .18s ease, background .18s ease;
+}
+.skill-chip:hover { border-color: #0a66c2; background: #eff6ff; }
+
+.modal-scroll { scrollbar-width: thin; scrollbar-color: #cbd5e1 transparent; }
+.modal-scroll::-webkit-scrollbar { width: 7px; }
+.modal-scroll::-webkit-scrollbar-thumb { background: #cbd5e1; border-radius: 20px; }
+
+@media (max-width: 767px) {
+  .profile-section { padding: 18px 16px; }
+  .nav-item { min-width: 34px; padding-inline: 2px; }
+}
